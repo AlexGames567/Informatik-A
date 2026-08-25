@@ -7,7 +7,7 @@ from PIL import Image
 # Einstellungen
 # -----------------------------
 
-MODEL_PATH = "Keras_Model.h5"
+MODEL_PATH = "keras_model.h5"
 
 # Diese Bildgröße muss zur Eingabegröße deines trainierten Modells passen.
 # Häufig verwendet werden 150x150, 180x180 oder 224x224.
