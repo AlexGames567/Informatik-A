@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 MODEL_PATH = "RandoTest/keras_model.h5"
-CLASS_NAMES_PATH = "class_names.txt"
+CLASS_NAMES_PATH = "labels.txt"
 
 
 @st.cache_resource
