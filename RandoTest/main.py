@@ -11,11 +11,21 @@ st.set_page_config(
 
 MODEL_PATH = "RandoTest/keras_model.h5"
 CLASS_NAMES_PATH = "labels.txt"
-
+class CompatibleDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
+    def __init__(self, *args, groups=1, **kwargs):        
+        # Bei DepthwiseConv2D ist groups=1 in diesem Fall unproblematisch.        
+        # Alte TensorFlow-Versionen akzeptieren den Parameter aber nicht.
+    super().__init__(*args, **kwargs)
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model(MODEL_PATH)
+    return tf.keras.models.load_model(
+        MODEL_PATH,
+        compile=False,
+        custom_objects={
+            "DepthwiseConv2D": CompatibleDepthwiseConv2D
+        }
+    )
 
 
 def load_class_names():
