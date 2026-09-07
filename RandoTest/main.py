@@ -9,7 +9,7 @@ st.set_page_config(
     layout="centered"
 )
 
-MODEL_PATH = "keras_model.h5"
+MODEL_PATH = "/RandoTest/keras_model.h5"
 CLASS_NAMES_PATH = "class_names.txt"
 
 
