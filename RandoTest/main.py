@@ -15,7 +15,7 @@ class CompatibleDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
     def __init__(self, *args, groups=1, **kwargs):        
         # Bei DepthwiseConv2D ist groups=1 in diesem Fall unproblematisch.        
         # Alte TensorFlow-Versionen akzeptieren den Parameter aber nicht.
-    super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
 @st.cache_resource
 def load_model():
